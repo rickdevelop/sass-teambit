@@ -1,0 +1,93 @@
+//VARIABILI
+$quoteTextColor: $defaultTextColor;
+$quoteBackground: $backgroundSecondary;
+$mainQuoteHeight: 400px;
+$quoteBlocksYSpacing: 80px;
+$quoteH3FontSize: 2.5rem;
+$quoteH3FontWeight: $defaultH3FontWeight;
+$quoteMainQuoteBGColor: $backgroundPrimary;
+$quoteParAndLinkFontSize: $defaultH3FontSize;
+$quoteParAndLinkFontWeight: 300;
+$quoteBtnsBackground: $btnBlue;
+$quoteBtnsTextColor: $whiteTextColor;
+$quoteBtnsFontSize: $btnFontSize;
+$quoteBtnsHoverBackground: $btnHoverBackground;
+$quoteBtnsHoverBgTransition: $btnHoverBgTransition;
+$quoteLinkColor: $linksDefaultTextColor;
+
+
+
+
+.quote {
+  padding-top: $quoteBlocksYSpacing;
+  padding-bottom: $quoteBlocksYSpacing;
+  text-align: center;
+  color: $quoteTextColor;
+  background: $quoteBackground;
+  h3 {
+    text-align: center;
+    font-size: $quoteH3FontSize;
+    font-weight: $quoteH3FontWeight;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .main_quote {
+      height: $mainQuoteHeight;
+      margin-top: $quoteBlocksYSpacing;
+      margin-bottom: 40px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      padding: 20px 30px;
+      background: $quoteMainQuoteBGColor;
+      border: 1px solid $bordersPrimary;
+      border-radius: 6px;
+      img.quote_img {
+        position: absolute;
+        top: 0;
+        left:0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+      }
+      .co_founders {
+        display: flex;
+        img {
+          margin-right: 10px;
+          width: 40px;
+          height: 40px;
+        }
+        .names {
+          h6 {
+            color: $linksDefaultTextColor;
+            margin-bottom: 7px;
+          }
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+
+}
+
+
+
+@media all and (min-width: 1150px) {
+
+
+}
+
+@media all and (max-width: 1149px) {
+
+
+}
+
+@media all and (max-width: 768px) {
+
+}

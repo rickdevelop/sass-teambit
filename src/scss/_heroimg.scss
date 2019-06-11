@@ -1,0 +1,53 @@
+//VARIABILI
+$heroTextColor: $defaultTextColor;
+$heroH1FontSize: $defaultH1FontSize;
+$HeroH1FontWeight:$defaultH1FontWeight;
+$heroH4FontSize: $defaultH4FontSize;
+$HeroH4FontWeight:$defaultH4FontWeight;
+$heroBtnsBackground: $btnBlue;
+$heroBtnsTextColor: $whiteTextColor;
+$heroBtnsFontSize: $btnFontSize;
+$HeroBtnsHoverBackground: $btnHoverBackground;
+$HeroBtnsHoverBgTransition: $btnHoverBgTransition;
+
+
+
+.hero {
+  margin: 100px auto;
+  color: $heroTextColor;
+  .hero_left{
+    h1 {
+      line-height: 4.5rem;
+      font-size: $heroH1FontSize;
+      font-weight: $HeroH1FontWeight;
+    }
+    h4 {
+      margin: 40px 0;
+      line-height: 2rem;
+      font-size: $heroH4FontSize;
+      font-weight: $HeroH4FontWeight;
+    }
+
+  }
+  .hero_right {
+    text-align: right;
+    img {
+      max-width: 90%;
+    }
+  }
+}
+
+
+
+@media all and (min-width: 1150px) {
+
+
+}
+
+@media all and (max-width: 1149px) {
+
+}
+
+@media all and (max-width: 768px) {
+
+}

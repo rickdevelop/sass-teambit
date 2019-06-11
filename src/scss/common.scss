@@ -1,0 +1,277 @@
+//REGOLE PRINCIPALI
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+}
+
+
+@media all and (max-width: 1149px) {
+
+  * {
+    font-size: 14px;
+  }
+
+}
+
+@media all and (max-width: 768px) {
+
+
+    * {
+      font-size: 12px;
+    }
+
+}
+
+#main_container {
+  max-width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+
+a {
+  cursor: pointer;
+  color: $defaultTextColor;
+  text-decoration: none;
+  &:hover {
+    color: $hoverDefaultTextColor;
+  }
+  i {
+    color: $defaultTextColor;
+    margin-left: $iconsMarginLeft;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: $defaultH1FontSize;
+  font-weight: $defaultH1FontWeight;
+}
+
+h4 {
+  font-size: $defaultH4FontSize;
+  font-weight: $defaultH4FontWeight;
+}
+
+h3 {
+  font-size: $defaultH3FontSize;
+  font-weight: $defaultH3FontWeight;
+}
+
+h6 {
+  font-size: $defaultH6FontSize;
+  font-weight: $defaultH6FontWeight;
+}
+
+
+
+//CONTAINERS E GRID SYSTEM ---> MIXINS
+
+@mixin clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@mixin col_6 {
+  float: left;
+  width: 50%;
+}
+
+@mixin col_6_end {
+  float: right;
+  width: 50%;
+}
+
+@mixin col_4 {
+  float: left;
+  width: calc(100% / 3);
+}
+
+@mixin col_4_end {
+  float: right;
+  width: calc(100% / 3);
+}
+
+@mixin col_3 {
+  float: left;
+  width: 25%;
+}
+
+@mixin col_3_end {
+  float: right;
+  width: 25%;
+}
+
+//CONTAINERS ---> CLASSI
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  &.main_quote {
+    max-width: 600px;
+  }
+}
+
+//RESPONSIVE GRID SYSTEM
+
+@media all and (min-width: 1150px) {
+
+  .row  {
+    &:after {
+      @include clearfix;
+    }
+
+    &:not(.elements_end) > div.col_3 {
+      @include col_3;
+    }
+    &.elements_end > div.col_3 {
+      @include col_3_end;
+    }
+    &.center_elements > div.col_3 {
+      &:first-child:nth-last-child(3) {
+        margin-left: calc(25% / 2);
+      }
+      &:first-child:nth-last-child(2) {
+        margin-left: 25%;
+      }
+      &:first-child:nth-last-child(1) {
+        margin-left: calc(75% / 2);
+      }
+    }
+
+    &:not(.elements_end) > div.col_4 {
+      @include col_4;
+    }
+    &.elements_end > div.col_4 {
+      @include col_4_end;
+    }
+    &.center_elements > div.col_4 {
+      &:first-child:nth-last-child(2) {
+        margin-left: calc((100% - (100% /3)) / 2);
+      }
+      &:first-child:nth-last-child(1) {
+        margin-left: calc((100% / 3) / 2);
+      }
+    }
+
+    &:not(.elements_end) > div.col_6 {
+      @include col_6;
+    }
+    &:not(.elements_end).center_elements > div.col_6 {
+      &:first-child:nth-last-child(1) {
+        margin-left: 25%;
+      }
+    }
+    &.elements_end > div.col_6 {
+      @include col_6_end;
+    }
+  }
+
+}
+
+@media all and (max-width: 1149px) {
+
+  section {
+    overflow: hidden;
+  }
+
+  .row  {
+    height: auto;
+    &:after {
+      @include clearfix;
+    }
+
+    & > .col_3, & > .col_4, & > .col_6 {
+      float:left;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 70px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  .container {
+    &.main_quote {
+      width: 90%;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    max-width: 90%;
+  }
+}
+
+
+
+button {
+  background: $backgroundPrimary;
+  &.btn_signup {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid $btnBlue;
+    outline-style: none;
+    font-weight: bold;
+    color: $btnBlue;
+    cursor: pointer;
+    img.logo {
+      vertical-align: middle;
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+  .signup_area {
+    margin-bottom: 20px;
+    .btn_signup {
+      padding: 8px 15px;
+      background: $btnBlue;
+      color: $whiteTextColor;
+      font-weight: 400;
+      font-size: $btnFontSize;
+      transition: $btnHoverBgTransition background;
+      &:hover {
+        background: $btnHoverBackground;
+      }
+    }
+    span {
+      margin: 0px 10px;
+    }
+  }
+
+
+
+@media all and (max-width: 768px) {
+  .signup_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      margin: 10px auto;
+      }
+    }
+}
+
+//COLORI
+
+.bg_green {
+  background: green;
+}
+
+.bg_red {
+  background: red;
+}

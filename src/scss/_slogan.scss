@@ -1,0 +1,65 @@
+
+$claimBackground: $backgroundSecondary;
+$claimTextColor: $defaultTextColor;
+$claimH3Width: 600px;
+$claimH3FontSize: $defaultH3FontSize;
+$claimH3FontWeight: $defaultH3FontWeight;
+$claimRowMarginY: 80px;
+$claimBlockPaddingY: 80px;
+$claimBlockConclusionImgWidth: 300px;
+
+
+
+.claim {
+  background: $claimBackground;
+  color: $claimTextColor;
+  .claim_block {
+    padding: $claimBlockPaddingY 0;
+    text-align: center;
+    h3 {
+      margin: 0 auto;
+      width: $claimH3Width;
+      font-size: $claimH3FontSize;
+      font-weight: $claimH3FontWeight;
+    }
+    .row  {
+      margin: $claimRowMarginY auto;
+      & > div.col_3 {
+        img {
+          height: 130px;
+          margin-bottom: 10px;
+        }
+        p {
+          margin-left: 15%;
+          margin-right: 15%;
+        }
+      }
+    }
+    .conclusion {
+      img {
+        max-width: $claimBlockConclusionImgWidth;
+      }
+      &.after img {
+        margin-bottom: 80px;
+      }
+    }
+    &.traditional_people {
+      border-bottom: 1px solid $bordersPrimary;
+    }
+  }
+}
+
+
+
+@media all and (min-width: 1150px) {
+
+
+}
+
+@media all and (max-width: 1149px) {
+
+}
+
+@media all and (max-width: 768px) {
+
+}
